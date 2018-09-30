@@ -19,6 +19,7 @@
 		CDCF307A216079FC004EA52D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF3079216079FC004EA52D /* GradientView.swift */; };
 		CDCF307D216087D8004EA52D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF307C216087D8004EA52D /* Constants.swift */; };
 		CDCF307F21609F64004EA52D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF307E21609F64004EA52D /* LoginViewController.swift */; };
+		CDCF30812160AC2C004EA52D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30802160AC2C004EA52D /* CreateAccountViewController.swift */; };
 		DC962DD5D7E45B21C69360FC /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416C1DD9FAB15E32469BC6C /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		CDCF3079216079FC004EA52D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		CDCF307C216087D8004EA52D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CDCF307E21609F64004EA52D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CDCF30802160AC2C004EA52D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		E0EF260B4E27D9A47E73AC34 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 				CDCF3052215FFC17004EA52D /* ChatViewController.swift */,
 				CDCF307521606F42004EA52D /* ChannelViewController.swift */,
 				CDCF307E21609F64004EA52D /* LoginViewController.swift */,
+				CDCF30802160AC2C004EA52D /* CreateAccountViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				CDCF3053215FFC17004EA52D /* ChatViewController.swift in Sources */,
 				CDCF3051215FFC17004EA52D /* AppDelegate.swift in Sources */,
 				CDCF307A216079FC004EA52D /* GradientView.swift in Sources */,
+				CDCF30812160AC2C004EA52D /* CreateAccountViewController.swift in Sources */,
 				CDCF307621606F42004EA52D /* ChannelViewController.swift in Sources */,
 				CDCF307421606B35004EA52D /* SWRevealViewController.m in Sources */,
 				CDCF307D216087D8004EA52D /* Constants.swift in Sources */,

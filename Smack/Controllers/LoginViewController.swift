@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
 
 	@IBOutlet weak var usernameTextField: UITextField!
 	@IBOutlet weak var passwordTextField: UITextField!
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +23,7 @@ class LoginViewController: UIViewController {
 	}
 	
 	@IBAction func doSignUp(_ sender: Any) {
+		performSegue(withIdentifier: TO_CREATE_ACCOUNT, sender: nil)
 	}
 	
 	@IBAction func dismissButtonPressed(_ sender: Any) {
