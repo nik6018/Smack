@@ -29,11 +29,24 @@ class CreateAccountViewController: UIViewController {
 		guard let email = emailTextField.text, email != "" else { return }
 		guard let pass = passwordTextField.text, pass != "" else { return }
 		
-		AuthService.instance.registerUser(
+		let service = AuthService.instance
+		
+		service.registerUser(
 			withEmail: email,
 			withPassword: pass) { (userCreated) in
+				
 				if userCreated {
-					print("We have Registered the User! Yippe")
+					
+					service.loginUser(
+						withEmail: email,
+						withPassword: pass,
+						completion: { (success) in
+							if success {
+								print("User Logged in")
+							} else {
+								print("Not able to login")
+							}
+					})
 				} else {
 					print("We Failed")
 				}

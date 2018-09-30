@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 
 class  AuthService {
@@ -48,10 +49,6 @@ class  AuthService {
 		
 		let emailLowerCased = email.lowercased()
 		
-		let headers = [
-			"Content-Type": "application/json"
-		]
-		
 		let postBody: [String: Any] = [
 			"email": emailLowerCased,
 			"password": password
@@ -62,7 +59,7 @@ class  AuthService {
 			method: .post,
 			parameters: postBody,
 			encoding: JSONEncoding.default,
-			headers: headers).responseString { (responseString) in
+			headers: HEADERS).responseString { (responseString) in
 				
 				if responseString.result.error == nil {
 					completion(true)
@@ -71,6 +68,46 @@ class  AuthService {
 					debugPrint(responseString.result.error as Any)
 				}
 		}
+	}
+	
+	func loginUser(
+		withEmail email: String,
+		withPassword password: String,
+		completion: @escaping CompletionHandler) {
+		
+		let emailLowerCased = email.lowercased()
+		
+		let postBody: [String: Any] = [
+			"email": emailLowerCased,
+			"password": password
+		]
+		
+		Alamofire.request(
+			URL_LOGIN,
+			method: .post,
+			parameters: postBody,
+			encoding: JSONEncoding.default,
+			headers: HEADERS).responseJSON { (response) in
+				
+				if response.result.error == nil {
+					guard let jsonData = response.data else { return }
+					
+					do {
+						let json = try JSON(data: jsonData)
+						self.userEmail = json["user"].stringValue
+						self.authToken = json["token"].stringValue
+					} catch {
+						print("Error parsing JSON: \(error.localizedDescription)")
+					}
+					
+					completion(true)
+				} else {
+					completion(false)
+					debugPrint(response.result.error as Any)
+				}
+				
+		}
+		
 		
 	}
 	
