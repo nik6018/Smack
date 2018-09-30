@@ -97,6 +97,8 @@ class  AuthService {
 						self.userEmail = json["user"].stringValue
 						self.authToken = json["token"].stringValue
 						self.isLoggedIn = true
+						print("The Email is : \(self.userEmail)")
+						print("The Token is : \(self.authToken)")
 					} catch {
 						print("Error parsing JSON: \(error.localizedDescription)")
 					}
@@ -120,17 +122,12 @@ class  AuthService {
 			"avatarColor": avatarColor
 		]
 		
-		let headers = [
-			"Authorization": "Bearer \(authToken)",
-			"Content-Type": "application/json"
-		]
-		
 		Alamofire.request(
 			USER_ADD,
 			method: .post,
 			parameters: postBody,
 			encoding: JSONEncoding.default,
-			headers: headers).responseJSON { (response) in
+			headers: AUTH_HEADERS).responseJSON { (response) in
 				
 				if response.result.error == nil {
 					guard let jsonData = response.data else { return }
@@ -145,7 +142,7 @@ class  AuthService {
 						
 						UserDataService.instance.addUser(id: responseId, name: responseName, avatarName: responseAvatarName, avatarColor: responseAvatarColor)
 					} catch {
-						print("Error parsing JSON: \(error.localizedDescription)")
+						print("Error parsing JSON: \(error)")
 					}
 					
 					completion(true)
@@ -158,6 +155,42 @@ class  AuthService {
 		
 	}
 	
+	
+	func findUserByEmail(completion: @escaping CompletionHandler) {
+		
+		let emailLowerCased = userEmail.lowercased()
+		
+		Alamofire.request(
+			"\(FIND_USER_EMAIL)\(emailLowerCased)",
+			method: .get,
+			parameters: nil,
+			encoding: JSONEncoding.default,
+			headers: AUTH_HEADERS).responseJSON { (response) in
+				if response.result.error == nil {
+					guard let jsonData = response.data else { return }
+					
+					do {
+						let json = try JSON(data: jsonData)
+						print(json.array)
+						let responseId = json["_id"].stringValue
+						let responseName = json["name"].stringValue
+						let responseAvatarName = json["avatarName"].stringValue
+						let responseAvatarColor = json["avatarColor"].stringValue
+						let responseEmail = json["email"].stringValue
+						
+						UserDataService.instance.addUser(id: responseId, name: responseName, avatarName: responseAvatarName, avatarColor: responseAvatarColor)
+					} catch {
+						print("Error parsing JSON: \(error)")
+					}
+					
+					completion(true)
+				} else {
+					completion(false)
+					debugPrint(response.result.error as Any)
+				}
+		}
+		
+	}
 	
 	
 	

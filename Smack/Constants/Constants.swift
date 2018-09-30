@@ -15,10 +15,16 @@ let BASE_URL = "https://nikhil6019chatty.herokuapp.com/v1/"
 let URL_ACCOUNT_REGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
 let USER_ADD = "\(BASE_URL)user/add"
+let FIND_USER_EMAIL = "\(BASE_URL)user/byEmail/"
 
 //Headers
 
 let HEADERS = [
+	"Content-Type": "application/json"
+]
+
+let AUTH_HEADERS = [
+	"Authorization": "Bearer \(AuthService.instance.authToken)",
 	"Content-Type": "application/json"
 ]
 

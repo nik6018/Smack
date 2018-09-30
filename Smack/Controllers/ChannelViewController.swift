@@ -20,6 +20,20 @@ class ChannelViewController: UIViewController {
 		NotificationCenter.default.addObserver(self, selector: #selector(checkUserDataState(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
     }
 	
+	override func viewDidAppear(_ animated: Bool) {
+		if AuthService.instance.isLoggedIn {
+			loginButton.setTitle(UserDataService.instance.name, for: .normal)
+			let imageName = UIImage(named: UserDataService.instance.avatarName)
+			userImageView.image = imageName
+			userImageView.backgroundColor = UserDataService.instance.getUIColorForString(components: UserDataService.instance.avatarColor)
+		} else {
+			loginButton.setTitle("Login", for: .normal)
+			userImageView.image = #imageLiteral(resourceName: "menuProfileIcon")
+			userImageView.backgroundColor = UIColor.clear
+		}
+	}
+	
+	
 	@objc func checkUserDataState(_ notification: Notification) {
 		
 		if AuthService.instance.isLoggedIn {

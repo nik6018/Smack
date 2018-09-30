@@ -197,10 +197,24 @@
                                     <action selector="dismissButtonPressed:" destination="1ua-oe-Mgv" eventType="touchUpInside" id="hGx-Hf-HU9"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CkI-2L-WBv">
+                                <rect key="frame" x="47" y="94" width="281.33333333333331" height="40"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smackLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ZKr-jf-X6k">
+                                        <rect key="frame" x="0.0" y="0.0" width="140.66666666666666" height="40"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smack" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP1-Z7-lmw">
+                                        <rect key="frame" x="140.66666666666669" y="0.0" width="140.66666666666669" height="40"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                        <color key="textColor" red="0.29411764705882354" green="0.27058823529411763" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YQP-ld-cXs">
                                 <rect key="frame" x="47" y="214" width="281.33333333333331" height="112"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cwt-NV-M4v">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cwt-NV-M4v">
                                         <rect key="frame" x="0.0" y="0.0" width="281.33333333333331" height="24"/>
                                         <color key="textColor" red="0.29411764709999999" green="0.27058823529999998" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -258,20 +272,10 @@
                                     <action selector="doSignUp:" destination="1ua-oe-Mgv" eventType="touchUpInside" id="DpR-AF-Fd4"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CkI-2L-WBv">
-                                <rect key="frame" x="47" y="94" width="281.33333333333331" height="40"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smackLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ZKr-jf-X6k">
-                                        <rect key="frame" x="0.0" y="0.0" width="140.66666666666666" height="40"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smack" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP1-Z7-lmw">
-                                        <rect key="frame" x="140.66666666666669" y="0.0" width="140.66666666666669" height="40"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                        <color key="textColor" red="0.29411764705882354" green="0.27058823529411763" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fJl-BC-0xf">
+                                <rect key="frame" x="169" y="287.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.29411764709999999" green="0.27058823529999998" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -282,7 +286,9 @@
                             <constraint firstItem="YQP-ld-cXs" firstAttribute="top" secondItem="CkI-2L-WBv" secondAttribute="bottom" constant="80" id="Oxi-uj-s4H"/>
                             <constraint firstItem="MeN-Rc-PBq" firstAttribute="width" secondItem="YQP-ld-cXs" secondAttribute="width" id="Xjb-7T-zjG"/>
                             <constraint firstItem="YQP-ld-cXs" firstAttribute="centerX" secondItem="CkI-2L-WBv" secondAttribute="centerX" id="gdg-Qg-8iT"/>
+                            <constraint firstItem="fJl-BC-0xf" firstAttribute="centerX" secondItem="P4C-wF-aXP" secondAttribute="centerX" id="hDa-I6-7uO"/>
                             <constraint firstItem="MeN-Rc-PBq" firstAttribute="top" secondItem="jtv-Dy-sYa" secondAttribute="bottom" constant="10" id="hQe-uW-McH"/>
+                            <constraint firstItem="fJl-BC-0xf" firstAttribute="centerY" secondItem="P4C-wF-aXP" secondAttribute="centerY" constant="-100" id="hZ9-iC-6Ce"/>
                             <constraint firstItem="jtv-Dy-sYa" firstAttribute="width" secondItem="YQP-ld-cXs" secondAttribute="width" id="lzv-4i-xp8"/>
                             <constraint firstItem="CkI-2L-WBv" firstAttribute="top" secondItem="qbl-Wf-k7l" secondAttribute="top" constant="50" id="nqq-uE-cRH"/>
                             <constraint firstItem="jtv-Dy-sYa" firstAttribute="top" secondItem="YQP-ld-cXs" secondAttribute="bottom" constant="30" id="pKl-wu-m74"/>
@@ -294,6 +300,7 @@
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="sSV-aA-TrX" id="w1P-U3-jAK"/>
+                        <outlet property="spinner" destination="fJl-BC-0xf" id="RmW-lV-dJf"/>
                         <outlet property="usernameTextField" destination="Cwt-NV-M4v" id="iFk-0g-nAq"/>
                         <segue destination="Xb1-hg-dCh" kind="show" identifier="toCreateAccount" id="3h3-wf-yz0"/>
                     </connections>
