@@ -20,6 +20,7 @@
 		CDCF307D216087D8004EA52D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF307C216087D8004EA52D /* Constants.swift */; };
 		CDCF307F21609F64004EA52D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF307E21609F64004EA52D /* LoginViewController.swift */; };
 		CDCF30812160AC2C004EA52D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30802160AC2C004EA52D /* CreateAccountViewController.swift */; };
+		CDCF30842160D57C004EA52D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30832160D57C004EA52D /* AuthService.swift */; };
 		DC962DD5D7E45B21C69360FC /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416C1DD9FAB15E32469BC6C /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		CDCF307C216087D8004EA52D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CDCF307E21609F64004EA52D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CDCF30802160AC2C004EA52D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		CDCF30832160D57C004EA52D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E0EF260B4E27D9A47E73AC34 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 		CDCF304F215FFC17004EA52D /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				CDCF30822160D48D004EA52D /* Services */,
 				CDCF307B216087C7004EA52D /* Constants */,
 				CDCF307021606B15004EA52D /* Supporting Files */,
 				CDCF3078216079CE004EA52D /* Views */,
@@ -180,6 +183,14 @@
 				CDCF307C216087D8004EA52D /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		CDCF30822160D48D004EA52D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CDCF30832160D57C004EA52D /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +412,7 @@
 				CDCF307F21609F64004EA52D /* LoginViewController.swift in Sources */,
 				CDCF3053215FFC17004EA52D /* ChatViewController.swift in Sources */,
 				CDCF3051215FFC17004EA52D /* AppDelegate.swift in Sources */,
+				CDCF30842160D57C004EA52D /* AuthService.swift in Sources */,
 				CDCF307A216079FC004EA52D /* GradientView.swift in Sources */,
 				CDCF30812160AC2C004EA52D /* CreateAccountViewController.swift in Sources */,
 				CDCF307621606F42004EA52D /* ChannelViewController.swift in Sources */,
