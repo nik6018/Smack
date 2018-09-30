@@ -31,6 +31,8 @@
 		CDCF30952161373C004EA52D /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30942161373C004EA52D /* MessageService.swift */; };
 		CDCF30982161377F004EA52D /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30972161377F004EA52D /* Channel.swift */; };
 		CDCF309A21613CA3004EA52D /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF309921613CA3004EA52D /* ChannelTableViewCell.swift */; };
+		CDCF309D21615144004EA52D /* AddChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF309B21615144004EA52D /* AddChannelViewController.swift */; };
+		CDCF309E21615144004EA52D /* AddChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCF309C21615144004EA52D /* AddChannelViewController.xib */; };
 		DC962DD5D7E45B21C69360FC /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416C1DD9FAB15E32469BC6C /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,8 @@
 		CDCF30942161373C004EA52D /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		CDCF30972161377F004EA52D /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		CDCF309921613CA3004EA52D /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
+		CDCF309B21615144004EA52D /* AddChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelViewController.swift; sourceTree = "<group>"; };
+		CDCF309C21615144004EA52D /* AddChannelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelViewController.xib; sourceTree = "<group>"; };
 		E0EF260B4E27D9A47E73AC34 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +193,7 @@
 				CDCF30802160AC2C004EA52D /* CreateAccountViewController.swift */,
 				CDCF30892160FC49004EA52D /* AvatarPickerViewController.swift */,
 				CDCF308F21611EEA004EA52D /* ProfileViewController.swift */,
+				CDCF309B21615144004EA52D /* AddChannelViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 		CDCF309321611EF3004EA52D /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				CDCF309C21615144004EA52D /* AddChannelViewController.xib */,
 				CDCF309021611EEA004EA52D /* ProfileViewController.xib */,
 			);
 			path = XIBs;
@@ -328,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDCF305B215FFC18004EA52D /* LaunchScreen.storyboard in Resources */,
+				CDCF309E21615144004EA52D /* AddChannelViewController.xib in Resources */,
 				CDCF3058215FFC18004EA52D /* Assets.xcassets in Resources */,
 				CDCF309221611EEA004EA52D /* ProfileViewController.xib in Resources */,
 				CDCF3056215FFC17004EA52D /* Main.storyboard in Resources */,
@@ -469,6 +476,7 @@
 				CDCF30842160D57C004EA52D /* AuthService.swift in Sources */,
 				CDCF308A2160FC49004EA52D /* AvatarPickerViewController.swift in Sources */,
 				CDCF307A216079FC004EA52D /* GradientView.swift in Sources */,
+				CDCF309D21615144004EA52D /* AddChannelViewController.swift in Sources */,
 				CDCF30812160AC2C004EA52D /* CreateAccountViewController.swift in Sources */,
 				CDCF307621606F42004EA52D /* ChannelViewController.swift in Sources */,
 				CDCF309121611EEA004EA52D /* ProfileViewController.swift in Sources */,

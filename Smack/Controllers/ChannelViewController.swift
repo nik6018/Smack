@@ -54,6 +54,14 @@ class ChannelViewController: UIViewController {
 		
 	}
 	
+	@IBAction func addChannelButtonPressed(_ sender: Any) {
+		
+		let addChannelVC = AddChannelViewController()
+		addChannelVC.modalPresentationStyle = .custom
+		present(addChannelVC, animated: true, completion: nil)
+	}
+	
+	
 	@IBAction func loginButtonPressed(_ sender: Any) {
 		
 		if AuthService.instance.isLoggedIn {

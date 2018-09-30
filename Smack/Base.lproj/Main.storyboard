@@ -107,9 +107,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exe-Ad-pJ1">
                                 <rect key="frame" x="271" y="130.66666666666666" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
+                                <connections>
+                                    <action selector="addChannelButtonPressed:" destination="CCl-DP-pZB" eventType="touchUpInside" id="b9N-el-ecp"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dXZ-dO-9zQ">
-                                <rect key="frame" x="0.0" y="160" width="375" height="534.33333333333337"/>
+                                <rect key="frame" x="0.0" y="159.66666666666669" width="375" height="534.66666666666652"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChannelCell" rowHeight="76" id="jZj-gB-6Ue" customClass="ChannelTableViewCell" customModule="Smack" customModuleProvider="target">
