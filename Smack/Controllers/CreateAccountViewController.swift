@@ -66,7 +66,9 @@ class CreateAccountViewController: UIViewController {
 	@IBAction func dismissVC(_ sender: Any) {
 		performSegue(withIdentifier: UNWIND, sender: nil)
 	}
+	
 	@IBAction func chooseAvatar(_ sender: Any) {
+		performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
 	}
 	
 	@IBAction func changeAvatarColor(_ sender: Any) {
