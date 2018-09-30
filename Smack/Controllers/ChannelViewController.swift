@@ -12,12 +12,17 @@ class ChannelViewController: UIViewController {
 
 	@IBOutlet weak var loginButton: UIButton!
 	@IBOutlet weak var userImageView: UIImageView!
+	@IBOutlet weak var tableView: UITableView!
+	
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 		revealViewController().rearViewRevealWidth = view.frame.width - 70
 		NotificationCenter.default.addObserver(self, selector: #selector(checkUserDataState(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+		tableView.delegate = self
+		tableView.dataSource = self
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -61,4 +66,19 @@ class ChannelViewController: UIViewController {
 	}
 	
 	@IBAction func prepareForUnWnindSegue(segue: UIStoryboardSegue) {  }
+}
+
+extension ChannelViewController: UITableViewDataSource, UITableViewDelegate {
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return MessageService.instance.channels.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "ChannelCell", for: indexPath) as! ChannelTableViewCell
+		let channel = MessageService.instance.channels[indexPath.row]
+		cell.configureCell(withChannel: channel)
+		return cell
+	}
+	
 }
