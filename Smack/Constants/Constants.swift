@@ -22,7 +22,9 @@ let HEADERS = [
 	"Content-Type": "application/json"
 ]
 
+//Notification
 
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
 
 //Segues
 let TO_LOGIN = "toLogin"

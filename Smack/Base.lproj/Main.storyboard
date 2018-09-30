@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -395,11 +396,14 @@
                                     <action selector="doLogin:" destination="1ua-oe-Mgv" eventType="touchUpInside" id="9BG-eS-WYw"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="MLS-ui-1sx">
-                                <rect key="frame" x="113" y="390.66666666666669" width="150" height="192.00000000000006"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="MLS-ui-1sx" customClass="CircleImageView" customModule="Smack" customModuleProvider="target">
+                                <rect key="frame" x="122.33333333333333" y="390.66666666666669" width="131.33333333333337" height="131.33333333333331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MLS-ui-1sx" secondAttribute="height" multiplier="1:1" id="Bfd-fa-4Gv"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qp-la-lH4">
-                                <rect key="frame" x="93" y="628.66666666666663" width="189" height="30"/>
+                                <rect key="frame" x="93" y="568" width="189" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Generate Background Color">
                                     <color key="titleColor" red="0.29411764709999999" green="0.27058823529999998" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -409,8 +413,12 @@
                                     <action selector="doSignUp:" destination="1ua-oe-Mgv" eventType="touchUpInside" id="59J-6Q-QFq"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="InA-ER-TE0">
+                                <rect key="frame" x="169" y="287.66666666666669" width="37" height="37"/>
+                                <color key="color" red="0.29411764709999999" green="0.27058823529999998" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8K-eI-iwu">
-                                <rect key="frame" x="137.33333333333334" y="590.66666666666663" width="99" height="30"/>
+                                <rect key="frame" x="137.33333333333334" y="530" width="99" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Choose Avatar">
                                     <color key="titleColor" red="0.29411764709999999" green="0.27058823529999998" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -423,9 +431,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="MLS-ui-1sx" firstAttribute="width" secondItem="0PM-6p-DPJ" secondAttribute="width" multiplier="0.4" id="4UQ-ha-czo"/>
+                            <constraint firstItem="MLS-ui-1sx" firstAttribute="width" secondItem="0PM-6p-DPJ" secondAttribute="width" multiplier="0.35" id="4UQ-ha-czo"/>
                             <constraint firstItem="3DW-c6-mg2" firstAttribute="width" secondItem="CpM-Wu-z51" secondAttribute="width" id="883-9H-VmY"/>
                             <constraint firstItem="m8K-eI-iwu" firstAttribute="top" secondItem="MLS-ui-1sx" secondAttribute="bottom" constant="8" symbolic="YES" id="9iP-C8-cXN"/>
+                            <constraint firstItem="InA-ER-TE0" firstAttribute="centerX" secondItem="9sp-sY-y2X" secondAttribute="centerX" id="HLc-x9-KXR"/>
                             <constraint firstItem="m8K-eI-iwu" firstAttribute="centerX" secondItem="0PM-6p-DPJ" secondAttribute="centerX" id="Hae-QZ-obe"/>
                             <constraint firstItem="94R-jQ-xA2" firstAttribute="top" secondItem="0PM-6p-DPJ" secondAttribute="top" constant="50" id="K8Z-ig-VYx"/>
                             <constraint firstItem="CpM-Wu-z51" firstAttribute="top" secondItem="94R-jQ-xA2" secondAttribute="bottom" constant="50" id="RLW-bd-Ka5"/>
@@ -433,6 +442,7 @@
                             <constraint firstItem="94R-jQ-xA2" firstAttribute="centerX" secondItem="0PM-6p-DPJ" secondAttribute="centerX" id="Sb2-wt-9VG"/>
                             <constraint firstItem="MLS-ui-1sx" firstAttribute="centerX" secondItem="0PM-6p-DPJ" secondAttribute="centerX" id="Tno-na-REI"/>
                             <constraint firstItem="MLS-ui-1sx" firstAttribute="top" secondItem="CpM-Wu-z51" secondAttribute="bottom" constant="40" id="WNH-j0-er9"/>
+                            <constraint firstItem="InA-ER-TE0" firstAttribute="centerY" secondItem="9sp-sY-y2X" secondAttribute="centerY" constant="-100" id="dBe-gz-DyM"/>
                             <constraint firstItem="3DW-c6-mg2" firstAttribute="bottom" secondItem="0PM-6p-DPJ" secondAttribute="bottom" id="e4S-1u-fCs"/>
                             <constraint firstItem="3DW-c6-mg2" firstAttribute="centerX" secondItem="0PM-6p-DPJ" secondAttribute="centerX" id="er3-io-ESy"/>
                             <constraint firstItem="2qp-la-lH4" firstAttribute="top" secondItem="m8K-eI-iwu" secondAttribute="bottom" constant="8" symbolic="YES" id="lgA-H8-Vwm"/>
@@ -447,6 +457,7 @@
                         <outlet property="chooseAvatarButton" destination="m8K-eI-iwu" id="GCF-ic-xyq"/>
                         <outlet property="emailTextField" destination="Nmq-gq-jN2" id="auV-Z9-t5g"/>
                         <outlet property="passwordTextField" destination="yCf-Ie-uof" id="wDh-1a-Web"/>
+                        <outlet property="spinner" destination="InA-ER-TE0" id="nhn-1n-uVs"/>
                         <outlet property="usernameTextField" destination="aHh-nd-SWI" id="W0v-6l-oOf"/>
                         <segue destination="MoC-08-csI" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnWnindSegueWithSegue:" id="lSC-df-WE3"/>
                         <segue destination="7DS-Zk-Rnv" kind="show" identifier="toAvatarPicker" id="HPf-Ez-yN5"/>

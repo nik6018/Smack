@@ -96,9 +96,3 @@ extension AvatarPickerViewController: UICollectionViewDataSource, UICollectionVi
 	}
 }
 
-
-
-
-
-
-

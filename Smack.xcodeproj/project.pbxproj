@@ -25,6 +25,7 @@
 		CDCF30882160EE58004EA52D /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30872160EE58004EA52D /* UserDataService.swift */; };
 		CDCF308A2160FC49004EA52D /* AvatarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30892160FC49004EA52D /* AvatarPickerViewController.swift */; };
 		CDCF308C2160FECD004EA52D /* AvatarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF308B2160FECD004EA52D /* AvatarCollectionViewCell.swift */; };
+		CDCF308E21610DC8004EA52D /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF308D21610DC8004EA52D /* CircleImageView.swift */; };
 		DC962DD5D7E45B21C69360FC /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416C1DD9FAB15E32469BC6C /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		CDCF30872160EE58004EA52D /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		CDCF30892160FC49004EA52D /* AvatarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerViewController.swift; sourceTree = "<group>"; };
 		CDCF308B2160FECD004EA52D /* AvatarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCollectionViewCell.swift; sourceTree = "<group>"; };
+		CDCF308D21610DC8004EA52D /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		E0EF260B4E27D9A47E73AC34 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +186,7 @@
 				CDCF3079216079FC004EA52D /* GradientView.swift */,
 				CDCF30852160DFB8004EA52D /* RoundedButton.swift */,
 				CDCF308B2160FECD004EA52D /* AvatarCollectionViewCell.swift */,
+				CDCF308D21610DC8004EA52D /* CircleImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 			files = (
 				CDCF307F21609F64004EA52D /* LoginViewController.swift in Sources */,
 				CDCF30862160DFB8004EA52D /* RoundedButton.swift in Sources */,
+				CDCF308E21610DC8004EA52D /* CircleImageView.swift in Sources */,
 				CDCF3053215FFC17004EA52D /* ChatViewController.swift in Sources */,
 				CDCF30882160EE58004EA52D /* UserDataService.swift in Sources */,
 				CDCF308C2160FECD004EA52D /* AvatarCollectionViewCell.swift in Sources */,
