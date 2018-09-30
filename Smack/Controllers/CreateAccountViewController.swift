@@ -17,6 +17,9 @@ class CreateAccountViewController: UIViewController {
 	@IBOutlet weak var avatarImageView: UIImageView!
 	@IBOutlet weak var chooseAvatarButton: UIButton!
 	
+	var avatarName = "profileDefault"
+	var avatarColor = "[0.5,0.5,0.5,1]"
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,24 +31,30 @@ class CreateAccountViewController: UIViewController {
 		
 		guard let email = emailTextField.text, email != "" else { return }
 		guard let pass = passwordTextField.text, pass != "" else { return }
+		guard let name = usernameTextField.text, name != "" else { return }
 		
 		let service = AuthService.instance
+		let userService = UserDataService.instance
 		
 		service.registerUser(
 			withEmail: email,
 			withPassword: pass) { (userCreated) in
 				
 				if userCreated {
-					
 					service.loginUser(
 						withEmail: email,
 						withPassword: pass,
 						completion: { (success) in
-							if success {
-								print("User Logged in")
-							} else {
-								print("Not able to login")
-							}
+							
+							service.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (success) in
+								
+								if success {
+									print("The User: \(userService.name) and id: \(userService.id)")
+									self.performSegue(withIdentifier: UNWIND, sender: nil)
+								}
+								
+							})
+							
 					})
 				} else {
 					print("We Failed")

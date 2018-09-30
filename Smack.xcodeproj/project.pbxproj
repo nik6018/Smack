@@ -22,6 +22,7 @@
 		CDCF30812160AC2C004EA52D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30802160AC2C004EA52D /* CreateAccountViewController.swift */; };
 		CDCF30842160D57C004EA52D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30832160D57C004EA52D /* AuthService.swift */; };
 		CDCF30862160DFB8004EA52D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30852160DFB8004EA52D /* RoundedButton.swift */; };
+		CDCF30882160EE58004EA52D /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30872160EE58004EA52D /* UserDataService.swift */; };
 		DC962DD5D7E45B21C69360FC /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416C1DD9FAB15E32469BC6C /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		CDCF30802160AC2C004EA52D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		CDCF30832160D57C004EA52D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		CDCF30852160DFB8004EA52D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		CDCF30872160EE58004EA52D /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		E0EF260B4E27D9A47E73AC34 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				CDCF30832160D57C004EA52D /* AuthService.swift */,
+				CDCF30872160EE58004EA52D /* UserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				CDCF307F21609F64004EA52D /* LoginViewController.swift in Sources */,
 				CDCF30862160DFB8004EA52D /* RoundedButton.swift in Sources */,
 				CDCF3053215FFC17004EA52D /* ChatViewController.swift in Sources */,
+				CDCF30882160EE58004EA52D /* UserDataService.swift in Sources */,
 				CDCF3051215FFC17004EA52D /* AppDelegate.swift in Sources */,
 				CDCF30842160D57C004EA52D /* AuthService.swift in Sources */,
 				CDCF307A216079FC004EA52D /* GradientView.swift in Sources */,

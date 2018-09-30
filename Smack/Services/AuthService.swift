@@ -96,6 +96,7 @@ class  AuthService {
 						let json = try JSON(data: jsonData)
 						self.userEmail = json["user"].stringValue
 						self.authToken = json["token"].stringValue
+						self.isLoggedIn = true
 					} catch {
 						print("Error parsing JSON: \(error.localizedDescription)")
 					}
@@ -105,12 +106,57 @@ class  AuthService {
 					completion(false)
 					debugPrint(response.result.error as Any)
 				}
+		}
+	}
+	
+	func createUser(name: String, email: String, avatarName: String, avatarColor: String, completion: @escaping CompletionHandler) {
+		
+		let emailLowerCased = email.lowercased()
+		
+		let postBody: [String: Any] = [
+			"name": name,
+			"email": emailLowerCased,
+			"avatarName": avatarName,
+			"avatarColor": avatarColor
+		]
+		
+		let headers = [
+			"Authorization": "Bearer \(authToken)",
+			"Content-Type": "application/json"
+		]
+		
+		Alamofire.request(
+			USER_ADD,
+			method: .post,
+			parameters: postBody,
+			encoding: JSONEncoding.default,
+			headers: headers).responseJSON { (response) in
 				
+				if response.result.error == nil {
+					guard let jsonData = response.data else { return }
+					
+					do {
+						let json = try JSON(data: jsonData)
+						let responseId = json["_id"].stringValue
+						let responseName = json["name"].stringValue
+						let responseAvatarName = json["avatarName"].stringValue
+						let responseAvatarColor = json["avatarColor"].stringValue
+						let responseEmail = json["email"].stringValue
+						
+						UserDataService.instance.addUser(id: responseId, name: responseName, avatarName: responseAvatarName, avatarColor: responseAvatarColor)
+					} catch {
+						print("Error parsing JSON: \(error.localizedDescription)")
+					}
+					
+					completion(true)
+				} else {
+					completion(false)
+					debugPrint(response.result.error as Any)
+				}
 		}
 		
 		
 	}
-	
 	
 	
 	
