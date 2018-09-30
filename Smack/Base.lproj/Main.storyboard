@@ -232,7 +232,7 @@
                                     <constraint firstItem="Tbo-p4-Lx7" firstAttribute="width" secondItem="YQP-ld-cXs" secondAttribute="width" id="yRs-JH-75e"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtv-Dy-sYa">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtv-Dy-sYa" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="47" y="356" width="281.33333333333331" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -380,7 +380,7 @@
                                     <constraint firstItem="Nmq-gq-jN2" firstAttribute="width" secondItem="CpM-Wu-z51" secondAttribute="width" id="wbw-Dc-1dU"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DW-c6-mg2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DW-c6-mg2" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="46" y="728" width="281.33333333333331" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -391,6 +391,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="createAccount:" destination="Xb1-hg-dCh" eventType="touchUpInside" id="qRk-Z0-tDh"/>
                                     <action selector="doLogin:" destination="1ua-oe-Mgv" eventType="touchUpInside" id="9BG-eS-WYw"/>
                                 </connections>
                             </button>
