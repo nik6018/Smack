@@ -26,6 +26,8 @@
 		CDCF308A2160FC49004EA52D /* AvatarPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30892160FC49004EA52D /* AvatarPickerViewController.swift */; };
 		CDCF308C2160FECD004EA52D /* AvatarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF308B2160FECD004EA52D /* AvatarCollectionViewCell.swift */; };
 		CDCF308E21610DC8004EA52D /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF308D21610DC8004EA52D /* CircleImageView.swift */; };
+		CDCF309121611EEA004EA52D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF308F21611EEA004EA52D /* ProfileViewController.swift */; };
+		CDCF309221611EEA004EA52D /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCF309021611EEA004EA52D /* ProfileViewController.xib */; };
 		DC962DD5D7E45B21C69360FC /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416C1DD9FAB15E32469BC6C /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		CDCF30892160FC49004EA52D /* AvatarPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerViewController.swift; sourceTree = "<group>"; };
 		CDCF308B2160FECD004EA52D /* AvatarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCollectionViewCell.swift; sourceTree = "<group>"; };
 		CDCF308D21610DC8004EA52D /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		CDCF308F21611EEA004EA52D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CDCF309021611EEA004EA52D /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		E0EF260B4E27D9A47E73AC34 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +139,7 @@
 		CDCF304F215FFC17004EA52D /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				CDCF309321611EF3004EA52D /* XIBs */,
 				CDCF30822160D48D004EA52D /* Services */,
 				CDCF307B216087C7004EA52D /* Constants */,
 				CDCF307021606B15004EA52D /* Supporting Files */,
@@ -176,6 +181,7 @@
 				CDCF307E21609F64004EA52D /* LoginViewController.swift */,
 				CDCF30802160AC2C004EA52D /* CreateAccountViewController.swift */,
 				CDCF30892160FC49004EA52D /* AvatarPickerViewController.swift */,
+				CDCF308F21611EEA004EA52D /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -206,6 +212,14 @@
 				CDCF30872160EE58004EA52D /* UserDataService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CDCF309321611EF3004EA52D /* XIBs */ = {
+			isa = PBXGroup;
+			children = (
+				CDCF309021611EEA004EA52D /* ProfileViewController.xib */,
+			);
+			path = XIBs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +312,7 @@
 			files = (
 				CDCF305B215FFC18004EA52D /* LaunchScreen.storyboard in Resources */,
 				CDCF3058215FFC18004EA52D /* Assets.xcassets in Resources */,
+				CDCF309221611EEA004EA52D /* ProfileViewController.xib in Resources */,
 				CDCF3056215FFC17004EA52D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +451,7 @@
 				CDCF307A216079FC004EA52D /* GradientView.swift in Sources */,
 				CDCF30812160AC2C004EA52D /* CreateAccountViewController.swift in Sources */,
 				CDCF307621606F42004EA52D /* ChannelViewController.swift in Sources */,
+				CDCF309121611EEA004EA52D /* ProfileViewController.swift in Sources */,
 				CDCF307421606B35004EA52D /* SWRevealViewController.m in Sources */,
 				CDCF307D216087D8004EA52D /* Constants.swift in Sources */,
 			);
