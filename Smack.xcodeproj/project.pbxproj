@@ -16,6 +16,9 @@
 		CDCF3066215FFC19004EA52D /* SmackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF3065215FFC19004EA52D /* SmackTests.swift */; };
 		CDCF307421606B35004EA52D /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCF307221606B35004EA52D /* SWRevealViewController.m */; };
 		CDCF307621606F42004EA52D /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF307521606F42004EA52D /* ChannelViewController.swift */; };
+		CDCF307A216079FC004EA52D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF3079216079FC004EA52D /* GradientView.swift */; };
+		CDCF307D216087D8004EA52D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF307C216087D8004EA52D /* Constants.swift */; };
+		CDCF307F21609F64004EA52D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF307E21609F64004EA52D /* LoginViewController.swift */; };
 		DC962DD5D7E45B21C69360FC /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416C1DD9FAB15E32469BC6C /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		CDCF307221606B35004EA52D /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		CDCF307321606B35004EA52D /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		CDCF307521606F42004EA52D /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		CDCF3079216079FC004EA52D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		CDCF307C216087D8004EA52D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CDCF307E21609F64004EA52D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E0EF260B4E27D9A47E73AC34 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,7 +121,9 @@
 		CDCF304F215FFC17004EA52D /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				CDCF307B216087C7004EA52D /* Constants */,
 				CDCF307021606B15004EA52D /* Supporting Files */,
+				CDCF3078216079CE004EA52D /* Views */,
 				CDCF307721606F4D004EA52D /* Controllers */,
 				CDCF3050215FFC17004EA52D /* AppDelegate.swift */,
 				CDCF3054215FFC17004EA52D /* Main.storyboard */,
@@ -150,8 +158,25 @@
 			children = (
 				CDCF3052215FFC17004EA52D /* ChatViewController.swift */,
 				CDCF307521606F42004EA52D /* ChannelViewController.swift */,
+				CDCF307E21609F64004EA52D /* LoginViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CDCF3078216079CE004EA52D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CDCF3079216079FC004EA52D /* GradientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CDCF307B216087C7004EA52D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CDCF307C216087D8004EA52D /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,10 +395,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDCF307F21609F64004EA52D /* LoginViewController.swift in Sources */,
 				CDCF3053215FFC17004EA52D /* ChatViewController.swift in Sources */,
 				CDCF3051215FFC17004EA52D /* AppDelegate.swift in Sources */,
+				CDCF307A216079FC004EA52D /* GradientView.swift in Sources */,
 				CDCF307621606F42004EA52D /* ChannelViewController.swift in Sources */,
 				CDCF307421606B35004EA52D /* SWRevealViewController.m in Sources */,
+				CDCF307D216087D8004EA52D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
