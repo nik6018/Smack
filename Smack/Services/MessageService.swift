@@ -23,7 +23,7 @@ class MessageService {
 			method: .get,
 			parameters: nil,
 			encoding: JSONEncoding.default,
-			headers: AUTH_HEADERS).responseJSON { (response) in
+			headers: AUTH_HEADERS).responseString { (response) in
 				
 				if response.result.error == nil {
 					guard let jsonData = response.data else { return }
@@ -39,12 +39,14 @@ class MessageService {
 							self.channels.append(channel)
 						}
 					} catch {
-						print("Error parsing JSON: \(error.localizedDescription)")
+						debugPrint(jsonData)
+						print("Error parsing JSON: \(error)")
 					}
 					
 					completion(true)
 				} else {
 					completion(false)
+					debugPrint(response.data)
 					debugPrint(response.result.error as Any)
 				}
 		}

@@ -20,6 +20,14 @@ class AddChannelViewController: UIViewController {
 		dismiss(animated: true, completion: nil)
 	}
 	@IBAction func createChannel(_ sender: Any) {
+		guard let name = channelName.text, name != "" else { return }
+		guard let desc = channelDescription.text, desc != "" else { return }
+		
+		SocketServrice.instance.addChannel(channelName: name, channelDesc: desc) { (success) in
+			if success {
+				self.dismiss(animated: true, completion: nil)
+			}
+		}
 	}
 	
     override func viewDidLoad() {

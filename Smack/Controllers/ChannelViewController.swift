@@ -23,6 +23,12 @@ class ChannelViewController: UIViewController {
 		NotificationCenter.default.addObserver(self, selector: #selector(checkUserDataState(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
 		tableView.delegate = self
 		tableView.dataSource = self
+		
+		SocketServrice.instance.getChannels { (success) in
+			if success {
+				self.tableView.reloadData()
+			}
+		}
     }
 	
 	override func viewDidAppear(_ animated: Bool) {

@@ -33,6 +33,7 @@
 		CDCF309A21613CA3004EA52D /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF309921613CA3004EA52D /* ChannelTableViewCell.swift */; };
 		CDCF309D21615144004EA52D /* AddChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF309B21615144004EA52D /* AddChannelViewController.swift */; };
 		CDCF309E21615144004EA52D /* AddChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCF309C21615144004EA52D /* AddChannelViewController.xib */; };
+		CDCF30A02161B19E004EA52D /* SocketServrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF309F2161B19E004EA52D /* SocketServrice.swift */; };
 		DC962DD5D7E45B21C69360FC /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416C1DD9FAB15E32469BC6C /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		CDCF309921613CA3004EA52D /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
 		CDCF309B21615144004EA52D /* AddChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelViewController.swift; sourceTree = "<group>"; };
 		CDCF309C21615144004EA52D /* AddChannelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelViewController.xib; sourceTree = "<group>"; };
+		CDCF309F2161B19E004EA52D /* SocketServrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketServrice.swift; sourceTree = "<group>"; };
 		E0EF260B4E27D9A47E73AC34 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +226,7 @@
 				CDCF30832160D57C004EA52D /* AuthService.swift */,
 				CDCF30872160EE58004EA52D /* UserDataService.swift */,
 				CDCF30942161373C004EA52D /* MessageService.swift */,
+				CDCF309F2161B19E004EA52D /* SocketServrice.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				CDCF309121611EEA004EA52D /* ProfileViewController.swift in Sources */,
 				CDCF307421606B35004EA52D /* SWRevealViewController.m in Sources */,
 				CDCF307D216087D8004EA52D /* Constants.swift in Sources */,
+				CDCF30A02161B19E004EA52D /* SocketServrice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
