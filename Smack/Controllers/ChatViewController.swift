@@ -15,6 +15,7 @@ class ChatViewController: UIViewController {
 	@IBOutlet weak var messageTextField: UITextField!
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var sendButton: UIButton!
+	@IBOutlet weak var typingUserLabel: UILabel!
 	
 	var isTyping = false
 	
@@ -54,6 +55,33 @@ class ChatViewController: UIViewController {
 			}
 		}
 		
+		SocketServrice.instance.getTypingUser { (typingUsers) in
+			guard let channelID = MessageService.instance.selectedChannel?.id else { return }
+			
+			if typingUsers.count > 0 {
+				var names = ""
+				typingUsers.forEach({ (elem) in
+					if elem.value == channelID {
+						if names.isEmpty {
+							names = elem.key
+						} else {
+							names += ",\(elem.key)"
+						}
+					}
+				})
+				
+				if typingUsers.count > 1 {
+					names += " are typing"
+				} else {
+					names += " is typing"
+				}
+				
+				self.typingUserLabel.text = names
+			} else {
+				self.typingUserLabel.text = ""
+			}
+		}
+		
 		if AuthService.instance.isLoggedIn {
 			AuthService.instance.findUserByEmail(completion: { (loginSuccess) in
 				if loginSuccess {
@@ -70,6 +98,7 @@ class ChatViewController: UIViewController {
 			guard let message = messageTextField.text, message != "" else { return }
 			
 			print("The CHannel ID is : \(channelId.id)")
+			SocketServrice.instance.manager.defaultSocket.emit("stopType", UserDataService.instance.name, channelId)
 			
 			SocketServrice.instance.addMessage(messageBody: message, userID: UserDataService.instance.id, channelId: channelId.id) { (success) in
 				if success {
@@ -84,13 +113,17 @@ class ChatViewController: UIViewController {
 	
 	@IBAction func messgeBoxEditing(_ sender: Any) {
 		
+		guard let channelID = MessageService.instance.selectedChannel?.id else { return }
+		
 		if messageTextField.text == "" {
 			isTyping = false
 			sendButton.isHidden = true
+			SocketServrice.instance.manager.defaultSocket.emit("stopType", UserDataService.instance.name, channelID)
 		} else {
 			if isTyping {
-				isTyping = false
+				SocketServrice.instance.userIsTyping(withName: UserDataService.instance.name, channelID: channelID)
 				sendButton.isHidden = false
+				
 			}
 			isTyping = true
 		}

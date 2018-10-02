@@ -73,6 +73,19 @@ class SocketServrice: NSObject {
 			}
 		}
 	}
+	
+	func userIsTyping(withName username: String, channelID: String) {
+		manager.defaultSocket.emit("startType", username, channelID)
+	}
+	
+	func getTypingUser(completion: @escaping (_ typeingUsers: [String: String]) -> Void) {
+		
+		manager.defaultSocket.on("userTypingUpdate") { (dataArray, ack) in
+			guard let typingUsers = dataArray[0] as? [String: String] else { return }
+			completion(typingUsers)
+		}
+		
+	}
 }
 
 
