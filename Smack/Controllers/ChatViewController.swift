@@ -45,8 +45,9 @@ class ChatViewController: UIViewController {
 		NotificationCenter.default.addObserver(self, selector: #selector(checkUserDataState(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(checkForSelectedChannel(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
 		
-		SocketServrice.instance.getMessage { (success) in
-			if success {
+		SocketServrice.instance.getMessage { (message) in
+			if message.channelId == MessageService.instance.selectedChannel?.id {
+				MessageService.instance.messeges.append(message)
 				self.tableView.reloadData()
 				if MessageService.instance.messeges.count > 0 {
 					let indexPath = IndexPath(row: MessageService.instance.messeges.count - 1, section: 0)
@@ -69,6 +70,9 @@ class ChatViewController: UIViewController {
 						}
 					}
 				})
+				
+				// extra check is some other channel conv is going on
+				if names.isEmpty { return }
 				
 				if typingUsers.count > 1 {
 					names += " are typing"
@@ -98,7 +102,7 @@ class ChatViewController: UIViewController {
 			guard let message = messageTextField.text, message != "" else { return }
 			
 			print("The CHannel ID is : \(channelId.id)")
-			SocketServrice.instance.manager.defaultSocket.emit("stopType", UserDataService.instance.name, channelId)
+			SocketServrice.instance.manager.defaultSocket.emit("stopType", UserDataService.instance.name, channelId.id)
 			
 			SocketServrice.instance.addMessage(messageBody: message, userID: UserDataService.instance.id, channelId: channelId.id) { (success) in
 				if success {

@@ -24,6 +24,7 @@ class ChannelTableViewCell: UITableViewCell {
         // Configure the view for the selected state
 		if selected {
 			layer.backgroundColor = UIColor(white: 1, alpha: 0.2).cgColor
+			channelTitle.font = UIFont(name: "Helvetica-Regular", size: 17)
 		} else {
 			layer.backgroundColor = UIColor.clear.cgColor
 		}
@@ -31,6 +32,9 @@ class ChannelTableViewCell: UITableViewCell {
 	
 	func configureCell(withChannel channel: Channel) {
 		channelTitle.text = "#\(channel.name)"
+		channelTitle.font = UIFont(name: "Helvetica-Regular", size: 17)
+		if MessageService.instance.unreadChannels.contains(channel.id) {
+			channelTitle.font = UIFont(name: "Helvetica-Bold", size: 20)
+		}
 	}
-
 }

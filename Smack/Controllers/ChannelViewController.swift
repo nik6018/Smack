@@ -30,6 +30,13 @@ class ChannelViewController: UIViewController {
 				self.tableView.reloadData()
 			}
 		}
+		
+		SocketServrice.instance.getMessage { (message) in
+			if message.channelId != MessageService.instance.selectedChannel?.id {
+				MessageService.instance.unreadChannels.append(message.channelId)
+				self.tableView.reloadData()
+			}
+		}
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
