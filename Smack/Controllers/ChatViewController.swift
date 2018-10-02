@@ -14,6 +14,10 @@ class ChatViewController: UIViewController {
 	@IBOutlet weak var channelNameLabel: UILabel!
 	@IBOutlet weak var messageTextField: UITextField!
 	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var sendButton: UIButton!
+	
+	var isTyping = false
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -24,6 +28,7 @@ class ChatViewController: UIViewController {
 		tableView.dataSource = self
 		tableView.estimatedRowHeight = 150
 		tableView.rowHeight = UITableViewAutomaticDimension
+		sendButton.isHidden = true
 		
 		menuButton.addTarget(
 			self.revealViewController(),
@@ -39,6 +44,15 @@ class ChatViewController: UIViewController {
 		NotificationCenter.default.addObserver(self, selector: #selector(checkUserDataState(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(checkForSelectedChannel(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
 		
+		SocketServrice.instance.getMessage { (success) in
+			if success {
+				self.tableView.reloadData()
+				if MessageService.instance.messeges.count > 0 {
+					let indexPath = IndexPath(row: MessageService.instance.messeges.count - 1, section: 0)
+					self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+				}
+			}
+		}
 		
 		if AuthService.instance.isLoggedIn {
 			AuthService.instance.findUserByEmail(completion: { (loginSuccess) in
@@ -65,8 +79,22 @@ class ChatViewController: UIViewController {
 					
 				}
 			}
-			
 		}
+	}
+	
+	@IBAction func messgeBoxEditing(_ sender: Any) {
+		
+		if messageTextField.text == "" {
+			isTyping = false
+			sendButton.isHidden = true
+		} else {
+			if isTyping {
+				isTyping = false
+				sendButton.isHidden = false
+			}
+			isTyping = true
+		}
+		
 	}
 	
 	@objc func handleTap() {
@@ -78,6 +106,7 @@ class ChatViewController: UIViewController {
 			getTheChannels()
 		} else {
 			channelNameLabel.text = "Please Login"
+			tableView.reloadData()
 		}
 	}
 
@@ -110,9 +139,7 @@ class ChatViewController: UIViewController {
 		guard let channelID = MessageService.instance.selectedChannel else { return }
 		
 		MessageService.instance.getAllMessages(withId: channelID.id) { (success) in
-			
-				self.tableView.reloadData()
-			
+			self.tableView.reloadData()
 		}
 		
 	}

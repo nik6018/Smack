@@ -60,9 +60,10 @@ class MessageService {
 		
 		Alamofire.request("\(GET_ALL_MESSAGES)/\(channelID)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: AUTH_HEADERS).responseJSON { (response) in
 			
+			self.clearMessages()
+			
 			if response.result.error == nil {
 				guard let jsonData = response.data else { return }
-				self.clearMessages()
 				
 				do {
 					if let json = try JSON(data: jsonData).array {

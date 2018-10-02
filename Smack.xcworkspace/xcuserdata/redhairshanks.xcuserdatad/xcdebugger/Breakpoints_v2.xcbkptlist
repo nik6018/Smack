@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Smack/Controllers/ChatViewController.swift"
-            timestampString = "560176345.670404"
+            timestampString = "560180338.256569"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "sendMessageButtonPressed(_:)"
             landmarkType = "7">
             <Locations>

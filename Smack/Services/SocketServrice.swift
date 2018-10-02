@@ -51,4 +51,31 @@ class SocketServrice: NSObject {
 		manager.defaultSocket.emit("newMessage", messageBody, userID, channelId, user.name, user.avatarName, user.avatarColor)
 		completion(true)
 	}
+	
+	func getMessage(completion: @escaping CompletionHandler) {
+		manager.defaultSocket.on("messageCreated") { (dataArray, ack) in
+			print("In \(#function)")
+			guard let responseMessage = dataArray[0] as? String else { return }
+			guard let responseChannelId = dataArray[2] as? String else { return }
+			guard let responseUserName = dataArray[3] as? String else { return }
+			guard let responseUserAvatar = dataArray[4] as? String else { return }
+			guard let responseUserAvatarColor = dataArray[5] as? String else { return }
+			guard let responseId = dataArray[6] as? String else { return }
+			guard let responseTimeStamp = dataArray[7] as? String else { return }
+			
+			if responseChannelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
+				print("In \(#function) If")
+				let message = Message(message: responseMessage, id: responseId, userName: responseUserName, userAvatarName: responseUserAvatar, userAvatarColor: responseUserAvatarColor, channelId: responseChannelId, timeStamp: responseTimeStamp)
+				MessageService.instance.messeges.append(message)
+				completion(true)
+			} else {
+				completion(false)
+			}
+		}
+	}
 }
+
+
+
+
+
