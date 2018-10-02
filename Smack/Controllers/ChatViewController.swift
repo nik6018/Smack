@@ -13,12 +13,18 @@ class ChatViewController: UIViewController {
 	@IBOutlet weak var menuButton: UIButton!
 	@IBOutlet weak var channelNameLabel: UILabel!
 	@IBOutlet weak var messageTextField: UITextField!
+	@IBOutlet weak var tableView: UITableView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		// Do any additional setup after loading the view, typically from a nib.
 		view.bindToKeyboard()
+		tableView.delegate = self
+		tableView.dataSource = self
+		tableView.estimatedRowHeight = 150
+		tableView.rowHeight = UITableViewAutomaticDimension
+		
 		menuButton.addTarget(
 			self.revealViewController(),
 			action: #selector(SWRevealViewController.revealToggle(_:)),
@@ -48,6 +54,8 @@ class ChatViewController: UIViewController {
 		if AuthService.instance.isLoggedIn {
 			guard let channelId = MessageService.instance.selectedChannel else { return }
 			guard let message = messageTextField.text, message != "" else { return }
+			
+			print("The CHannel ID is : \(channelId.id)")
 			
 			SocketServrice.instance.addMessage(messageBody: message, userID: UserDataService.instance.id, channelId: channelId.id) { (success) in
 				if success {
@@ -102,9 +110,31 @@ class ChatViewController: UIViewController {
 		guard let channelID = MessageService.instance.selectedChannel else { return }
 		
 		MessageService.instance.getAllMessages(withId: channelID.id) { (success) in
-			//
+			
+				self.tableView.reloadData()
+			
 		}
 		
 	}
 }
+
+extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return MessageService.instance.messeges.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageTableViewCell
+		let message = MessageService.instance.messeges[indexPath.row]
+		cell.configureCell(withMessage: message)
+		return cell
+	}
+}
+
+
+
+
+
+
 

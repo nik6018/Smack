@@ -36,6 +36,7 @@
 		CDCF30A02161B19E004EA52D /* SocketServrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF309F2161B19E004EA52D /* SocketServrice.swift */; };
 		CDCF30A22163488B004EA52D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30A12163488B004EA52D /* Message.swift */; };
 		CDCF30A42163815A004EA52D /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30A32163815A004EA52D /* KeyboardBoundView.swift */; };
+		CDCF30A621638B0E004EA52D /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30A521638B0E004EA52D /* MessageTableViewCell.swift */; };
 		DC962DD5D7E45B21C69360FC /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416C1DD9FAB15E32469BC6C /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		CDCF309F2161B19E004EA52D /* SocketServrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketServrice.swift; sourceTree = "<group>"; };
 		CDCF30A12163488B004EA52D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		CDCF30A32163815A004EA52D /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		CDCF30A521638B0E004EA52D /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		E0EF260B4E27D9A47E73AC34 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,6 +215,7 @@
 				CDCF308D21610DC8004EA52D /* CircleImageView.swift */,
 				CDCF309921613CA3004EA52D /* ChannelTableViewCell.swift */,
 				CDCF30A32163815A004EA52D /* KeyboardBoundView.swift */,
+				CDCF30A521638B0E004EA52D /* MessageTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				CDCF30812160AC2C004EA52D /* CreateAccountViewController.swift in Sources */,
 				CDCF307621606F42004EA52D /* ChannelViewController.swift in Sources */,
 				CDCF309121611EEA004EA52D /* ProfileViewController.swift in Sources */,
+				CDCF30A621638B0E004EA52D /* MessageTableViewCell.swift in Sources */,
 				CDCF307421606B35004EA52D /* SWRevealViewController.m in Sources */,
 				CDCF307D216087D8004EA52D /* Constants.swift in Sources */,
 				CDCF30A02161B19E004EA52D /* SocketServrice.swift in Sources */,

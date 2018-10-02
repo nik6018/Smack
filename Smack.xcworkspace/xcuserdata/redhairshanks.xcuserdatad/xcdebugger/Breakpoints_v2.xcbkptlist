@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Smack/Controllers/ChatViewController.swift"
+            timestampString = "560176345.670404"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "sendMessageButtonPressed(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Smack.ChatViewController.sendMessageButtonPressed(Any) -&gt; ()"
+                  moduleName = "Smack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/redhairshanks/Documents/iOS/Smack/Smack/Controllers/ChatViewController.swift"
+                  timestampString = "560175388.24005"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "3313">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Smack.ChatViewController.sendMessageButtonPressed(Any) -&gt; ()"
+                  moduleName = "Smack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/redhairshanks/Documents/iOS/Smack/Smack/Controllers/ChatViewController.swift"
+                  timestampString = "560175388.244934"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -29,7 +29,6 @@ class MessageService {
 				
 				if response.result.error == nil {
 					guard let jsonData = response.data else { return }
-					self.clearMessages()
 					
 					do {
 						let json = try JSON(data: jsonData).array
@@ -63,19 +62,22 @@ class MessageService {
 			
 			if response.result.error == nil {
 				guard let jsonData = response.data else { return }
+				self.clearMessages()
 				
 				do {
 					if let json = try JSON(data: jsonData).array {
 						for message in json {
-							let responseMessage = message["message"].stringValue
+							let responseMessage = message["messageBody"].stringValue
 							let responseID = message["_id"].stringValue
-							let responseChannelID = message["channelID"].stringValue
+							let responseChannelID = message["channelId"].stringValue 
 							let responseUserName = message["userName"].stringValue
 							let responseUserAvatar = message["userAvatar"].stringValue
 							let responseUserAvatarColor = message["userAvatarColor"].stringValue
 							let responseTimeStamp = message["timeStamp"].stringValue
 							
 							let message = Message(message: responseMessage, id: responseID, userName: responseUserName, userAvatarName: responseUserAvatar, userAvatarColor: responseUserAvatarColor, channelId: responseChannelID, timeStamp: responseTimeStamp)
+
+							
 							self.messeges.append(message)
 							completion(true)
 						}
