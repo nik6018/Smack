@@ -34,6 +34,7 @@
 		CDCF309D21615144004EA52D /* AddChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF309B21615144004EA52D /* AddChannelViewController.swift */; };
 		CDCF309E21615144004EA52D /* AddChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCF309C21615144004EA52D /* AddChannelViewController.xib */; };
 		CDCF30A02161B19E004EA52D /* SocketServrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF309F2161B19E004EA52D /* SocketServrice.swift */; };
+		CDCF30A22163488B004EA52D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF30A12163488B004EA52D /* Message.swift */; };
 		DC962DD5D7E45B21C69360FC /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416C1DD9FAB15E32469BC6C /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		CDCF309B21615144004EA52D /* AddChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelViewController.swift; sourceTree = "<group>"; };
 		CDCF309C21615144004EA52D /* AddChannelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelViewController.xib; sourceTree = "<group>"; };
 		CDCF309F2161B19E004EA52D /* SocketServrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketServrice.swift; sourceTree = "<group>"; };
+		CDCF30A12163488B004EA52D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E0EF260B4E27D9A47E73AC34 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				CDCF30972161377F004EA52D /* Channel.swift */,
+				CDCF30A12163488B004EA52D /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				CDCF3053215FFC17004EA52D /* ChatViewController.swift in Sources */,
 				CDCF30982161377F004EA52D /* Channel.swift in Sources */,
 				CDCF309A21613CA3004EA52D /* ChannelTableViewCell.swift in Sources */,
+				CDCF30A22163488B004EA52D /* Message.swift in Sources */,
 				CDCF30882160EE58004EA52D /* UserDataService.swift in Sources */,
 				CDCF30952161373C004EA52D /* MessageService.swift in Sources */,
 				CDCF308C2160FECD004EA52D /* AvatarCollectionViewCell.swift in Sources */,

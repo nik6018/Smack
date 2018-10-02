@@ -21,6 +21,7 @@ class ChannelViewController: UIViewController {
         // Do any additional setup after loading the view.
 		revealViewController().rearViewRevealWidth = view.frame.width - 70
 		NotificationCenter.default.addObserver(self, selector: #selector(checkUserDataState(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(checkIfChannelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
 		tableView.delegate = self
 		tableView.dataSource = self
 		
@@ -32,21 +33,18 @@ class ChannelViewController: UIViewController {
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
-		if AuthService.instance.isLoggedIn {
-			loginButton.setTitle(UserDataService.instance.name, for: .normal)
-			let imageName = UIImage(named: UserDataService.instance.avatarName)
-			userImageView.image = imageName
-			userImageView.backgroundColor = UserDataService.instance.getUIColorForString(components: UserDataService.instance.avatarColor)
-		} else {
-			loginButton.setTitle("Login", for: .normal)
-			userImageView.image = #imageLiteral(resourceName: "menuProfileIcon")
-			userImageView.backgroundColor = UIColor.clear
-		}
+		setUpUserInfo()
 	}
 	
-	
 	@objc func checkUserDataState(_ notification: Notification) {
-		
+		setUpUserInfo()
+	}
+	
+	@objc func checkIfChannelsLoaded(_ notification: Notification) {
+		tableView.reloadData()
+	}
+	
+	func setUpUserInfo() {
 		if AuthService.instance.isLoggedIn {
 			loginButton.setTitle(UserDataService.instance.name, for: .normal)
 			let imageName = UIImage(named: UserDataService.instance.avatarName)
@@ -56,17 +54,17 @@ class ChannelViewController: UIViewController {
 			loginButton.setTitle("Login", for: .normal)
 			userImageView.image = #imageLiteral(resourceName: "menuProfileIcon")
 			userImageView.backgroundColor = UIColor.clear
+			tableView.reloadData() 
 		}
-		
 	}
 	
 	@IBAction func addChannelButtonPressed(_ sender: Any) {
-		
-		let addChannelVC = AddChannelViewController()
-		addChannelVC.modalPresentationStyle = .custom
-		present(addChannelVC, animated: true, completion: nil)
+		if AuthService.instance.isLoggedIn {
+			let addChannelVC = AddChannelViewController()
+			addChannelVC.modalPresentationStyle = .custom
+			present(addChannelVC, animated: true, completion: nil)
+		}
 	}
-	
 	
 	@IBAction func loginButtonPressed(_ sender: Any) {
 		
@@ -95,4 +93,14 @@ extension ChannelViewController: UITableViewDataSource, UITableViewDelegate {
 		return cell
 	}
 	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let channel = MessageService.instance.channels[indexPath.row]
+		MessageService.instance.selectedChannel = channel
+		NotificationCenter.default.post(name: NOTIF_CHANNEL_SELECTED, object: nil)
+		revealViewController().revealToggle(animated: true)
+	}
+	
+	
+	
 }
+

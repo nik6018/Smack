@@ -77,6 +77,7 @@
                         <viewLayoutGuide key="safeArea" id="Iow-jh-UaA"/>
                     </view>
                     <connections>
+                        <outlet property="channelNameLabel" destination="xWJ-eh-mK0" id="fuB-p6-iTk"/>
                         <outlet property="menuButton" destination="7uU-8u-LCK" id="nca-He-175"/>
                     </connections>
                 </viewController>
@@ -111,7 +112,7 @@
                                     <action selector="addChannelButtonPressed:" destination="CCl-DP-pZB" eventType="touchUpInside" id="b9N-el-ecp"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dXZ-dO-9zQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dXZ-dO-9zQ">
                                 <rect key="frame" x="0.0" y="159.66666666666669" width="375" height="534.66666666666652"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -119,7 +120,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jZj-gB-6Ue" id="XNf-nu-K22">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#general" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGx-3p-wWN">
@@ -131,7 +132,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="dGx-3p-wWN" firstAttribute="centerY" secondItem="XNf-nu-K22" secondAttribute="centerY" id="F0h-66-gWA"/>
+                                                <constraint firstItem="dGx-3p-wWN" firstAttribute="top" secondItem="XNf-nu-K22" secondAttribute="topMargin" constant="16" id="fYu-RO-hAX"/>
                                                 <constraint firstItem="dGx-3p-wWN" firstAttribute="leading" secondItem="XNf-nu-K22" secondAttribute="leadingMargin" id="o7Y-8m-3Yi"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="dGx-3p-wWN" secondAttribute="bottom" constant="15" id="vtT-o2-ZVk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

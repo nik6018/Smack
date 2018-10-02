@@ -28,17 +28,12 @@ class SocketServrice: NSObject {
 	}
 	
 	func addChannel(channelName: String, channelDesc: String, completion: @escaping CompletionHandler) {
-		print("CHannel Name: \(channelName)")
-		print("CHannel Desc: \(channelDesc)")
 		manager.defaultSocket.emit("newChannel", channelName, channelDesc)
 		completion(true)
 	}
 	
 	func getChannels(completion: @escaping CompletionHandler) {
 		manager.defaultSocket.on("channelCreated") { (dataArray, ack) in
-			
-			print("IN CHANNEL RECIEVE FUNC")
-			
 			guard let name = dataArray[0] as? String else {return}
 			guard let desc = dataArray[1] as? String else {return}
 			guard let id = dataArray[2] as? String else {return}

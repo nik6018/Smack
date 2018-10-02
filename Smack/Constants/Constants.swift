@@ -17,9 +17,9 @@ let URL_LOGIN = "\(BASE_URL)account/login"
 let USER_ADD = "\(BASE_URL)user/add"
 let FIND_USER_EMAIL = "\(BASE_URL)user/byEmail/"
 let GET_ALL_CHANNELS = "\(BASE_URL)channel"
+let GET_ALL_MESSAGES = "\(BASE_URL)message/byChannel"
 
 //Headers
-
 let HEADERS = [
 	"Content-Type": "application/json"
 ]
@@ -30,8 +30,9 @@ let AUTH_HEADERS = [
 ]
 
 //Notification
-
 let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")
+let NOTIF_CHANNELS_LOADED = Notification.Name("channelsLoaded")
+let NOTIF_CHANNEL_SELECTED = Notification.Name("channelSelected")
 
 //Segues
 let TO_LOGIN = "toLogin"
