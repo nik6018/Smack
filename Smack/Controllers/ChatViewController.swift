@@ -12,11 +12,13 @@ class ChatViewController: UIViewController {
 
 	@IBOutlet weak var menuButton: UIButton!
 	@IBOutlet weak var channelNameLabel: UILabel!
+	@IBOutlet weak var messageTextField: UITextField!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		// Do any additional setup after loading the view, typically from a nib.
+		view.bindToKeyboard()
 		menuButton.addTarget(
 			self.revealViewController(),
 			action: #selector(SWRevealViewController.revealToggle(_:)),
@@ -24,6 +26,9 @@ class ChatViewController: UIViewController {
 		
 		view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 		view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+		
+		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+		view.addGestureRecognizer(tapGesture)
 		
 		NotificationCenter.default.addObserver(self, selector: #selector(checkUserDataState(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(checkForSelectedChannel(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
@@ -38,6 +43,26 @@ class ChatViewController: UIViewController {
 				}
 			})
 		}
+	}
+	@IBAction func sendMessageButtonPressed(_ sender: Any) {
+		if AuthService.instance.isLoggedIn {
+			guard let channelId = MessageService.instance.selectedChannel else { return }
+			guard let message = messageTextField.text, message != "" else { return }
+			
+			SocketServrice.instance.addMessage(messageBody: message, userID: UserDataService.instance.id, channelId: channelId.id) { (success) in
+				if success {
+					self.messageTextField.text = ""
+					self.messageTextField.resignFirstResponder()
+				} else {
+					
+				}
+			}
+			
+		}
+	}
+	
+	@objc func handleTap() {
+		view.endEditing(true)
 	}
 	
 	@objc func checkUserDataState(_ notification: Notification) {

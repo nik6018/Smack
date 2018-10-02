@@ -43,7 +43,12 @@ class SocketServrice: NSObject {
 			completion(true)
 			
 		}
+	}
+	
+	func addMessage(messageBody :String,userID: String,channelId: String,completion: @escaping 	CompletionHandler) {
 		
-		
+		let user = UserDataService.instance
+		manager.defaultSocket.emit("newMessage", messageBody, userID, channelId, user.name, user.avatarName, user.avatarColor)
+		completion(true)
 	}
 }
